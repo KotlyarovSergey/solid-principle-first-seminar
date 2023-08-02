@@ -1,6 +1,7 @@
 package homework;
 
 import homework.util.ConsoleReport;
+import homework.util.SaveMethod;
 
 public class Main{
     public static void main(String[] args){
@@ -12,7 +13,8 @@ public class Main{
         reportManager.showReport(user);
 
         // user.save();
-        Persister persister = new Persister(user);
-        persister.save();
+        Persistarable persistMethod = new SaveMethod();
+        Persister persister = new Persister(persistMethod);
+        persister.save(user);
     }
 }
